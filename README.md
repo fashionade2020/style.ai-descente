@@ -28,7 +28,7 @@ curl -X POST https://logs.fashionade.ai/logs 로 요청을 보내는 형태이�
 상품 상세 예시)
 
 ```
-curl -X POST https://logs.fashionade.ai/logs -d '{"sdk": "outfit","type": "click","apiKey": "00251d9716cc44e3b6b91f8f3a3ea4a79db2392ad8ba46f7b81480f6ab9716ea","uuid": "user uuid","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15","lang":"ko-kr","page":"https://www.fashionade.ai/item/64567","referrer":"https://www.fashionade.ai/item/64568","deviceTime":"2021-05-06T02:39:36.096Z","ext": {"userId": "20211222test","age": "10-20"},"styleNo": "1","recommendId": "331652","originalItemId": "163100717403064704","recommendItemId": "163100717403064704"}'
+curl -X POST https://logs.fashionade.ai/logs -d '{"sdk": "outfit","type": "click","apiKey": "qEPCePiBjV2Clk0rEwuSwEq6dddrici9YA2yRaTDa1s2d3f4q5w6e8r1h5b1b6b","uuid": "user uuid","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15","lang":"ko-kr","page":"https://www.fashionade.ai/item/64567","referrer":"https://www.fashionade.ai/item/64568","deviceTime":"2021-05-06T02:39:36.096Z","ext": {"userId": "20211222test","age": "10-20"},"styleNo": "1","recommendId": "123123","originalItemId": "123123","recommendItemId": "123123"}'
 ```
 
 ### 장바구니, 구매완료
@@ -37,7 +37,7 @@ curl -X POST https://logs.fashionade.ai/logs -d '{"sdk": "outfit","type": "click
 ```
 items: [ 
   { 
-    "productId": "ADW221", // 상품 Id
+    "productId": "asdfzxcv12", // 상품 Id
     "currency": "KRW", // 공급가 통화 
     "price": 123, // 공급가 
     "saleCurrency": "KRW", // 판매가 통화 
@@ -51,13 +51,13 @@ items: [
 장바구니 예시)
 
 ```
-curl -X POST https://logs.fashionade.ai/logs -d '{"sdk":"outfit","type":"addCart","apiKey":"00251d9716cc44e3b6b91f8f3a3ea4a79db2392ad8ba46f7b81480f6ab9716ea","uuid":"a6dd3f32-5ce7-45c6-b818-2e8846a390a1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36","lang":"ko-KR","page":"http://localhost:9000/","referrer":"","deviceTime":"2021-12-21T03:35:37.231Z","windowName":"","ext":{"userId":"20211222test","age":"10-20"},"eventPosition":0,"items":[{"productId":"SM113LSN11","currency":"KRW","price":109000,"saleCurrency":"KRW","salePrice":109000,"qty":2,"totalAmount":218000}]}'
+curl -X POST https://logs.fashionade.ai/logs -d '{"sdk":"outfit","type":"addCart","apiKey":"qEPCePiBjV2Clk0rEwuSwEq6dddrici9YA2yRaTDa1s2d3f4q5w6e8r1h5b1b6b","uuid":"a6dd3f32-5ce7-45c6-b818-2e8846a390a1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36","lang":"ko-KR","page":"http://localhost:9000/","referrer":"","deviceTime":"2021-12-21T03:35:37.231Z","windowName":"","ext":{"userId":"20211222test","age":"10-20"},"eventPosition":0,"items":[{"productId":"asdfzxcv12","currency":"KRW","price":109000,"saleCurrency":"KRW","salePrice":109000,"qty":2,"totalAmount":218000}]}'
 ```
 
 구매완료 예시)
 
 ```
-curl -X POST https://logs.fashionade.ai/logs -d '{"sdk":"outfit","type":"purchase","apiKey":"00251d9716cc44e3b6b91f8f3a3ea4a79db2392ad8ba46f7b81480f6ab9716ea","uuid":"a6dd3f32-5ce7-45c6-b818-2e8846a390a1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36","lang":"ko-KR","page":"http://localhost:9000/","referrer":"","deviceTime":"2021-12-21T03:44:12.703Z","windowName":"","ext":{"userId":"20211222test","age":"10-20"},"eventPosition":0,"items":[{"orderNo":"20210926-0001","productId":"SM113LSN11","currency":"KRW","price":109000,"saleCurrency":"KRW","salePrice":109000,"qty":1,"totalAmount":109000}]}'
+curl -X POST https://logs.fashionade.ai/logs -d '{"sdk":"outfit","type":"purchase","apiKey":"qEPCePiBjV2Clk0rEwuSwEq6dddrici9YA2yRaTDa1s2d3f4q5w6e8r1h5b1b6b","uuid":"a6dd3f32-5ce7-45c6-b818-2e8846a390a1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36","lang":"ko-KR","page":"http://localhost:9000/","referrer":"","deviceTime":"2021-12-21T03:44:12.703Z","windowName":"","ext":{"userId":"20211222test","age":"10-20"},"eventPosition":0,"items":[{"orderNo":"20210926-0001","productId":"asdfzxcv12","currency":"KRW","price":109000,"saleCurrency":"KRW","salePrice":109000,"qty":1,"totalAmount":109000}]}'
 ```
 
 ### 기존 sdk 참조
