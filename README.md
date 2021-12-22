@@ -37,6 +37,7 @@ curl -X POST https://logs.fashionade.ai/logs -d '{"sdk": "outfit","type": "click
 ```
 items: [ 
   { 
+    "orderId" : "20210926-0001" // 주문 Id 구매완료시에만 사용
     "productId": "asdfzxcv12", // 상품 Id
     "currency": "KRW", // 공급가 통화 
     "price": 123, // 공급가 
