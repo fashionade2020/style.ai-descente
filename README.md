@@ -60,6 +60,3 @@ curl -X POST https://logs.fashionade.ai/logs -d '{"sdk":"outfit","type":"addCart
 curl -X POST https://logs.fashionade.ai/logs -d '{"sdk":"outfit","type":"purchase","apiKey":"qEPCePiBjV2Clk0rEwuSwEq6dddrici9YA2yRaTDa1s2d3f4q5w6e8r1h5b1b6b","uuid":"a6dd3f32-5ce7-45c6-b818-2e8846a390a1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36","lang":"ko-KR","page":"http://localhost:9000/","referrer":"","deviceTime":"2021-12-21T03:44:12.703Z","windowName":"","ext":{"userId":"20211222test","age":"10-20"},"eventPosition":0,"items":[{"orderNo":"20210926-0001","productId":"asdfzxcv12","currency":"KRW","price":109000,"saleCurrency":"KRW","salePrice":109000,"qty":1,"totalAmount":109000}]}'
 ```
 
-### 기존 sdk 참조
-
-
