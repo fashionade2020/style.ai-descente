@@ -1,1 +1,65 @@
-# style.ai-descente
+# 데상트 성과측정툴 개발자 가이드
+
+### Common
+curl -X POST https://logs.fashionade.ai/logs 로 요청을 보내는 형태이며 공통적으로 body 에 들어가는 데이터는 다음과 같습니다.
+
+```
+"type": "click", // 로그 타입 (click, addCart, purchase)
+"apiKey": "XXXXXXX", // 이전에 전달드린 데상트 apiKey
+"uuid": "/^[a-zA-Z0-9]+$/", // 랜덤 생성 unique id
+"userAgent": "Mozilla", // user agent
+"lang": "ko-Kr", // 브라우저 언어
+"page": "https://www.sample.com/page.html", 페이지 url"referrer": "https://www.sample.com/refer", 링크를 통해 현재 페이지로 이동 시킨, 전 페이지의 URI 정보
+"deviceTime": "2020-09-09 12:00:00.000" // GMT+9
+"ext": {
+  "userId": "userId" // 유저아이디
+}
+```
+
+### 상품 상세
+상품 상세 (상품 클릭) 에서는 위의 공통 데이터에 세 가지 데이터를 추가해주시면 됩니다.
+
+```
+"recommendId": "123123" // 스타일추천 Id 
+"originalItemId": "123123" // 스타일추천 key 상품 Id 
+"recommendItemId": "123123" // 추천 상품 Id 
+```
+
+상품 상세 예시)
+
+```
+curl -X POST https://logs.fashionade.ai/logs -d '{"sdk": "outfit","type": "click","apiKey": "00251d9716cc44e3b6b91f8f3a3ea4a79db2392ad8ba46f7b81480f6ab9716ea","uuid": "user uuid","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15","lang":"ko-kr","page":"https://www.fashionade.ai/item/64567","referrer":"https://www.fashionade.ai/item/64568","deviceTime":"2021-05-06T02:39:36.096Z","ext": {"userId": "20211222test","age": "10-20"},"styleNo": "1","recommendId": "331652","originalItemId": "163100717403064704","recommendItemId": "163100717403064704"}'
+```
+
+### 장바구니, 구매완료
+장바구니와 구매완료 페이지는 type 을 제외한 데이터 양식이 같으며 items(json array)를 추가해주시면 됩니다.
+
+```
+items: [ 
+  { 
+    "productId": "ADW221", // 상품 Id
+    "currency": "KRW", // 공급가 통화 
+    "price": 123, // 공급가 
+    "saleCurrency": "KRW", // 판매가 통화 
+    "salePrice": 123, // 판매가 
+    "qty": 2, // 수량 
+    "totalAmount": 246 // 수량 * 판매가
+  }, ... 
+]
+```
+
+장바구니 예시)
+
+```
+curl -X POST https://logs.fashionade.ai/logs -d '{"sdk":"outfit","type":"addCart","apiKey":"00251d9716cc44e3b6b91f8f3a3ea4a79db2392ad8ba46f7b81480f6ab9716ea","uuid":"a6dd3f32-5ce7-45c6-b818-2e8846a390a1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36","lang":"ko-KR","page":"http://localhost:9000/","referrer":"","deviceTime":"2021-12-21T03:35:37.231Z","windowName":"","ext":{"userId":"20211222test","age":"10-20"},"eventPosition":0,"items":[{"productId":"SM113LSN11","currency":"KRW","price":109000,"saleCurrency":"KRW","salePrice":109000,"qty":2,"totalAmount":218000}]}'
+```
+
+구매완료 예시)
+
+```
+curl -X POST https://logs.fashionade.ai/logs -d '{"sdk":"outfit","type":"purchase","apiKey":"00251d9716cc44e3b6b91f8f3a3ea4a79db2392ad8ba46f7b81480f6ab9716ea","uuid":"a6dd3f32-5ce7-45c6-b818-2e8846a390a1","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36","lang":"ko-KR","page":"http://localhost:9000/","referrer":"","deviceTime":"2021-12-21T03:44:12.703Z","windowName":"","ext":{"userId":"20211222test","age":"10-20"},"eventPosition":0,"items":[{"orderNo":"20210926-0001","productId":"SM113LSN11","currency":"KRW","price":109000,"saleCurrency":"KRW","salePrice":109000,"qty":1,"totalAmount":109000}]}'
+```
+
+### 기존 sdk 참조
+
+
