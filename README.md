@@ -20,10 +20,7 @@ curl -X POST https://logs.fashionade.ai/logs 로 요청을 보내는 형태이�
 상품 상세 추가 데이터
 
 ```
-"styleNo": "1",
-"recommendId": "123123" // 스타일추천 Id 
-"originalItemId": "123123" // 스타일추천 key 상품 Id 
-"recommendItemId": "123123" // 추천 상품 Id 
+"recommendItemId": "123123" // 추천 상품 Id (/style-with api response에서 items.
 ```
 
 상품 상세 예시)
@@ -43,9 +40,6 @@ curl -X POST 'https://logs.fashionade.ai/logs' \
   "ext": {
     "userId": "20211222test",
    },
-   "styleNo": "1",
-   "recommendId": "123123",
-   "originalItemId": "123123",
    "recommendItemId": "123123"
 }'
 ```
