@@ -28,7 +28,7 @@ curl -X POST https://logs.fashionade.ai/logs 로 요청을 보내는 형태이�
 ```
 curl -X POST 'https://logs.fashionade.ai/logs' \
 -d '{
-  "sdk": "outfit",
+  "sdk": "with",
   "type": "click",
   "apiKey": "qEPCePiBjV2Clk0rEwuSwEq6dddrici9YA2yRaTDa1s2d3f4q5w6e8r1h5b1b6b",
   "uuid": "user uuid",
@@ -67,7 +67,7 @@ items: [
 ```
 curl -X 'POST https://logs.fashionade.ai/logs' \
 -d '{
-  "sdk":"outfit",
+  "sdk":"with",
   "type":"addCart",
   "apiKey":"qEPCePiBjV2Clk0rEwuSwEq6dddrici9YA2yRaTDa1s2d3f4q5w6e8r1h5b1b6b",
   "uuid":"a6dd3f32-5ce7-45c6-b818-2e8846a390a1",
@@ -99,7 +99,7 @@ curl -X 'POST https://logs.fashionade.ai/logs' \
 ```
 curl -X 'POST https://logs.fashionade.ai/logs' \
 -d '{
-  "sdk":"outfit",
+  "sdk":"with",
   "type":"purchase",
   "apiKey":"qEPCePiBjV2Clk0rEwuSwEq6dddrici9YA2yRaTDa1s2d3f4q5w6e8r1h5b1b6b",
   "uuid":"a6dd3f32-5ce7-45c6-b818-2e8846a390a1",
